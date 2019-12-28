@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="serif"
+        android:text="@string/lbl_change_language"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/btn_myanmar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_select"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_myanmar"
+        android:drawablePadding="16dp"
+        android:fontFamily="serif"
+        android:padding="16dp"
+        android:text="@string/lbl_myanmar"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/btn_english"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_myanmar"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_united_kingdom"
+        android:drawablePadding="16dp"
+        android:fontFamily="serif"
+        android:padding="16dp"
+        android:text="@string/lbl_english"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold" />
+
+</RelativeLayout>

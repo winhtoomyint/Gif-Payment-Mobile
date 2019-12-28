@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "384390834589",
+    "firebase_url": "https://paybill-58d29.firebaseio.com",
+    "project_id": "paybill-58d29",
+    "storage_bucket": "paybill-58d29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384390834589:android:088fe3d2420b3937a4a774",
+        "android_client_info": {
+          "package_name": "com.example.paybill"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384390834589-fd92dfcmn68e3vot8m0o2q0ldpl092qf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.paybill",
+            "certificate_hash": "30e1dc304364d9446b0f63760ec255560fd7b975"
+          }
+        },
+        {
+          "client_id": "384390834589-iqqmjsvfuk0aifadr7phlcb1tjgiq9ng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.paybill",
+            "certificate_hash": "8d419d2e76ed0fbf8d880bfc303febf6ea9b85b0"
+          }
+        },
+        {
+          "client_id": "384390834589-6kog8hmsquughn55oerbjpt34299ak99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ5BlNVKHl-EjUQAyE_9NJNXH306pW1dM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "384390834589-6kog8hmsquughn55oerbjpt34299ak99.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

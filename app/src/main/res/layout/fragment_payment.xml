@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/custom_border"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_business_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lbl_business_type"
+        android:textColor="#ffffff"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/sp_business_type"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_round_grey"
+        android:entries="@array/types"
+        app:layout_constraintEnd_toEndOf="@+id/tv_business_type"
+        app:layout_constraintStart_toStartOf="@+id/tv_business_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_business_type" />
+
+    <TextView
+        android:id="@+id/tv_business_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lbl_name"
+        android:textColor="#ffffff"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/sp_business_type"
+        app:layout_constraintStart_toStartOf="@+id/sp_business_type"
+        app:layout_constraintTop_toBottomOf="@+id/sp_business_type" />
+
+    <Spinner
+        android:id="@+id/sp_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_round_grey"
+        android:entries="@array/names"
+        app:layout_constraintEnd_toEndOf="@+id/tv_business_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_business_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_business_name" />
+
+    <TextView
+        android:id="@+id/tv_amount_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lbl_amount"
+        android:textColor="#ffffff"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/sp_name"
+        app:layout_constraintStart_toStartOf="@+id/sp_name"
+        app:layout_constraintTop_toBottomOf="@+id/sp_name" />
+
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_round_grey"
+        android:fontFamily="@font/roboto"
+        android:inputType="numberDecimal"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium"
+        android:textColor="@color/primary_text"
+        android:textColorHighlight="@color/primary_text"
+        android:textColorHint="@color/secondary_text"
+        app:layout_constraintEnd_toStartOf="@+id/sp_unit"
+        app:layout_constraintStart_toStartOf="@+id/tv_amount_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_amount_title" />
+
+    <Spinner
+        android:id="@+id/sp_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_round_grey"
+        android:entries="@array/unit"
+        app:layout_constraintEnd_toEndOf="@+id/tv_amount_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_amount_title" />
+
+    <TextView
+        android:id="@+id/tv_description_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lbl_description"
+        android:textColor="#ffffff"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/sp_unit"
+        app:layout_constraintStart_toStartOf="@+id/et_amount"
+        app:layout_constraintTop_toBottomOf="@+id/et_amount" />
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_round_grey"
+        android:fontFamily="@font/roboto"
+        android:gravity="start|left"
+        android:inputType="textMultiLine"
+        android:lineSpacingMultiplier="1.3"
+        android:lines="3"
+        android:padding="@dimen/margin_medium"
+        android:textColor="@color/primary_text"
+        android:textColorHighlight="@color/primary_text"
+        android:textColorHint="@color/secondary_text"
+        app:layout_constraintEnd_toEndOf="@+id/tv_description_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_description_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_title" />
+
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/yello_color"
+        android:elevation="4dp"
+        android:fontFamily="@font/roboto"
+        android:gravity="center_horizontal"
+        android:paddingStart="@dimen/margin_medium_3"
+        android:paddingTop="@dimen/margin_medium_2"
+        android:paddingEnd="@dimen/margin_medium_3"
+        android:paddingBottom="@dimen/margin_medium_2"
+        android:text="@string/lbl_cancel"
+        android:textAllCaps="true"
+        android:textColor="#ffffff"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btn_send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_description" />
+
+
+    <TextView
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/yello_color"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:elevation="4dp"
+        android:fontFamily="@font/roboto"
+        android:gravity="center_horizontal"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_medium_2"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_medium_2"
+        android:text="@string/lbl_send"
+        android:textAllCaps="true"
+        android:textColor="#ffffff"
+
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/et_description" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

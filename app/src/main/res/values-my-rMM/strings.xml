@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gif Payment</string>
+    <string name="txt_welcome">ကြိုဆိုပါတယ်,</string>
+    <string name="txt_available_amount">ငွေပမာဏ</string>
+    <string name="txt_spent">ဝင်ငွေ</string>
+    <string name="txt_income">အသုံးစရိတ်</string>
+    <string name="menu_card">ကျွန်တော့်ကတ်များ</string>
+    <string name="menu_profile">ကျွန်ုပ်၏ကိုယ်ရေးရာဇဝင်အကျဉ်း</string>
+    <string name="menu_receive">လက်ခံ</string>
+    <string name="lbl_receiver_account">ငွေလက်ခံသူအကောင့်နံပါတ်</string>
+    <string name="lbl_description">အကြောင်းအရာ</string>
+    <string name="bankacc">ဘဏ်အကောင့်နံပါတ်</string>
+    <string name="menu_payment">ငွေပေးချေမှု</string>
+    <string name="lbl_business_type">လုပ်ငန်းအမျိုးအစား</string>
+    <string name="lbl_name">နာမည်</string>
+    <string name="lbl_username">နာမည်</string>
+    <string name="lbl_state">ပြည်နယ်</string>
+    <string name="lbl_pay">ငွေပေးချေမှု</string>
+    <string name="lbl_cancel">ပယ်ဖျက်ရန်</string>
+    <string name="txt_singin">အကောင့်သို့ဝင်ရန်</string>
+    <string name="lbl_enter_phone_number">ဖုန်းနံပါတ်ထည့်ပါ</string>
+    <string name="lbl_verification_code">စီစစ်နေပါသည်</string>
+    <string name="lbl_account_number">အကောင့်နံပါတ် :</string>
+    <string name="lbl_nrc">နိုင်ငံသားကဒ်</string>
+    <string name="lbl_phone_number">ဖုန်းနံပါတ်</string>
+    <string name="lbl_email">အီးမေးလ်</string>
+    <string name="lbl_address">လိပ်စာ</string>
+    <string name="lbl_township">မြို့နယ်</string>
+    <string name="lbl_city">မြို့တော်</string>
+    <string name="lbl_nrc_back_image">နိုင်ငံသားကဒ်(နောက်ပုံ)</string>
+    <string name="lbl_register">မှတ်ပုံတင်ရန်အချက်အလက်များဖြည့်သွင်းပါ</string>
+    <string name="lbl_nrc_front_image">နိုင်ငံသားကဒ်(ရှေ့ပုံ)</string>
+    <string name="lbl_external_key">ပြင်ပသော့</string>
+    <string name="city">ရန်ကုန်</string>
+    <string name="township">တာမွေ</string>
+    <string name="shop_name">My Bill</string>
+    <string name="lbl_myanmar">မြန်မာ</string>
+    <string name="lbl_english">အင်္ဂလိပ်</string>
+    <string name="lbl_communicate">ဆက်သွယ်ရန်</string>
+    <string name="cash_in_agent">ငွေသွင်းရန်(ကိုယ်စားလှယ်)</string>
+    <string name="cash_in_bank">ငွေသွင်းရန်(ဘဏ်)</string>
+    <string name="lbl_change_language">ဘာသာစကားပြောင်းပါ</string>
+    <string name="lbl_account_name">အကောင့်နာမည် :</string>
+    <string name="lbl_password">စကားဝှက်</string>
+
+
+    <string name="shop">ဆိုင်များ</string>
+    <string name="myabout">အကြောင်းအရာ</string>
+    <string name="user_location_permission_explanation">ဤအပလီကေးရှင်းသည်၎င်း၏လုပ်ဆောင်နိုင်မှုကိုပြသရန်တည်နေရာခွင့်ပြုချက်များလိုအပ်သည်</string>
+    <string name="user_location_permission_not_granted">သင်တည်နေရာခွင့်ပြုချက်မပေးခဲ့ဘူး</string>
+
+    <string name="title_activity_wallet">Wallet</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">GIFT Wallet</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">ဝန်ဆောင်မှုများ</string>
+    <string name="log_out">ထွက်ပါ</string>
+    <string name="lbl_amount">ငွေပမာဏ</string>
+    <string name="lbl_send">ပို့ပါ</string>
+    <string name="menu_home">မူလစာမျက်နှာ</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">ပို့ပါ</string>
+    <string name="lbl_city_shoplist">မြို့တော် :</string>
+    <string name="lbl_township_shoplist">မြို့နယ်</string>
+    <string name="shop_name_shoplist">ဆိုင်နာမည် :</string>
+    <string name="invoice_detail">အသေးစိတ်</string>
+    <string name="my_account">မိမိ အကောင့် id : </string>
+    <string name="bill">ကုန်ကျစားရိတ်ဘေလ်</string>
+    <string name="mtopup">ငွေဖြည့်ရန်</string>
+    <string name="date">ရက်စွဲ</string>
+    <string name="setting">ချိန်ညှိခြင်း</string>
+    <string name="kyat">ကျပ်</string>
+    <string name="terms">စည်းကမ်းနှင့်သတ်မှတ်ချက်များ</string>
+
+    <string-array name="types">
+        <item>ခရီးသွားလက်မှတ်များ</item>
+        <item>လောင်စာဆီဝယ်ယူရန်</item>
+        <item>ဟိုတယ်/တည်းခိုခန်းများ</item>
+        <item>တက္ကစီငှားရန်</item>
+    </string-array>
+
+    <string-array name="unit">
+        <item>ဒေါ်လာ ($)</item>
+        <item>ကျပ် (ks)</item>
+        <item>ယွမ် (¥)</item>
+    </string-array>
+</resources>

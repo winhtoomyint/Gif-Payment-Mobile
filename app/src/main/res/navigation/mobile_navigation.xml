@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.paybill.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.paybill.ui.gallery.GalleryFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_cash_in"
+        android:name="com.example.paybill.ui.cashin.CashInFragment"
+        android:label="@string/cash_in_agent"
+        tools:layout="@layout/fragment_cash_in"/>
+    <fragment
+        android:id="@+id/nav_bank_cashin"
+        android:name="com.example.paybill.ui.BankCashFragment"
+        android:label="@string/cash_in_bank"
+        tools:layout="@layout/fragment_bank_cash_in"/>
+    <fragment
+        android:id="@+id/nav_shopfrag"
+        android:name="com.example.paybill.ui.GiftShopFragment"
+        android:label="@string/shop"
+        tools:layout="@layout/gift_shop_locationfrag"/>
+    <fragment
+        android:id="@+id/nav_tools"
+        android:name="com.example.paybill.ui.tools.ToolsFragment"
+        android:label="@string/menu_payment"
+        tools:layout="@layout/fragment_payment" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.paybill.ui.share.ReceiveFragment"
+        android:label="@string/menu_receive"
+        tools:layout="@layout/fragment_recieve" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.example.paybill.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_sendbill" />
+    <fragment
+        android:id="@+id/nav_bill"
+        android:name="com.example.paybill.ui.BillFragment"
+        android:label="@string/bill"
+        tools:layout="@layout/fragment_bill"/>
+
+    <fragment
+        android:id="@+id/nav_mbtopup"
+        android:name="com.example.paybill.ui.TopUpFragment"
+        android:label="@string/mtopup"
+        tools:layout="@layout/fragment_mobile_topup" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.example.paybill.ui.SettingFragment"
+        android:label="@string/setting"
+        tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/nav_termcondit"
+        android:name="com.example.paybill.ui.TermsFragment"
+        android:label="@string/terms"
+        tools:layout="@layout/fragment_terms_and_conditions" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.paybill.ui.AboutFragment"
+        android:label="@string/myabout"
+        tools:layout="@layout/fragment_aboutus" />
+
+
+</navigation>

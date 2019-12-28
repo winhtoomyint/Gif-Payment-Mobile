@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/menu_profile" />
+
+        <item
+            android:id="@+id/nav_cash_in"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/cash_in_agent"/>
+        <item
+            android:id="@+id/nav_bank_cashin"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/cash_in_bank"/>
+
+        <item
+            android:id="@+id/nav_shopfrag"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/shop"/>
+
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_payment" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/menu_receive" />
+
+    </group>
+
+    <item android:title="@string/lbl_communicate">
+        <menu>
+
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/menu_send" />
+            <item
+                android:id="@+id/nav_bill"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/bill" />
+            <item
+                android:id="@+id/nav_mbtopup"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/mtopup" />
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/setting" />
+            <item
+                android:id="@+id/nav_termcondit"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/terms" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/myabout" />
+
+        </menu>
+    </item>
+
+</menu>

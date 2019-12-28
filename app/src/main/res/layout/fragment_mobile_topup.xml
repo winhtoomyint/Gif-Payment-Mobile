@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_border"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_mobileTopup"
+        android:layout_marginTop="80dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Mobile Top Up"
+        android:textAlignment="center"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_phone"
+        android:layout_below="@id/tv_mobileTopup"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Enter Phone Number"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_bill"
+        android:layout_below="@id/ed_phone"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Amount"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_marginLeft="100dp"
+        android:layout_below="@id/ed_bill"
+        android:entries="@array/type"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/yello_color"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:onClick="tvOnOk"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:text="OK"/>
+
+
+</RelativeLayout>

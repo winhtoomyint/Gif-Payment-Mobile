@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/custom_border"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <TextView
+        android:id="@+id/tv_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/bankacc"
+        android:textColor="#ffffff"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/et_account"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:background="@drawable/bg_round_grey"
+        android:fontFamily="@font/roboto"
+        android:inputType="number"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium"
+        android:textColor="@color/primary_text"
+        android:textColorHighlight="@color/primary_text"
+        android:textColorHint="@color/secondary_text" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lbl_amount"
+        android:textColor="#ffffff"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:background="@drawable/bg_round_grey"
+        android:fontFamily="@font/roboto"
+        android:inputType="number"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium"
+        android:textColor="@color/primary_text"
+        android:textColorHighlight="@color/primary_text"
+        android:textColorHint="@color/secondary_text" />
+
+    <Button
+        android:id="@+id/button_cash_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium_2"
+        android:background="@drawable/yello_color"
+        android:fontFamily="@font/roboto"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/margin_medium_2"
+        android:text="@string/lbl_send"
+        android:textAllCaps="true"
+        android:textColor="#338373"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold" />
+</LinearLayout>

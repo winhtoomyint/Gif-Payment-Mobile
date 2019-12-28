@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#338373"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Are You Sure?"
+        android:textColor="#fde171"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_account_id_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ReceiverId"
+        android:textColor="#fde171"
+        app:layout_constraintEnd_toEndOf="@id/divider_dot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_sure" />
+
+    <TextView
+        android:id="@+id/tv_account_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#fde171"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider_dot"
+        app:layout_constraintTop_toBottomOf="@id/tv_sure"
+        tools:text="Testing Account ID" />
+
+    <TextView
+        android:id="@+id/tv_amount_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:textColor="#fde171"
+        app:layout_constraintEnd_toEndOf="@id/divider_dot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_id" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#fde171"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider_dot"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_id"
+        tools:text="Testing Amount" />
+
+    <TextView
+        android:id="@+id/tv_description_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:text="Description"
+        android:textColor="#fde171"
+        app:layout_constraintEnd_toEndOf="@id/divider_dot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_amount" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:textColor="#fde171"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider_dot"
+        app:layout_constraintTop_toBottomOf="@id/tv_amount"
+        tools:text="Testing Description" />
+
+    <Button
+        android:id="@+id/btn_yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yello_color"
+        android:text="Yes"
+        android:textColor="#338373"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/divider_center"
+        />
+
+    <Button
+        android:id="@+id/btn_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yello_color"
+        android:text="No"
+        android:textColor="#338373"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        app:layout_constraintEnd_toEndOf="@+id/divider_center"/>
+
+    <View
+        android:id="@+id/divider_center"
+        android:layout_width="1dp"
+        android:layout_height="172dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/divider_dot"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/divider_center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_sure"
+        app:layout_constraintBottom_toBottomOf="@id/tv_description_header"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

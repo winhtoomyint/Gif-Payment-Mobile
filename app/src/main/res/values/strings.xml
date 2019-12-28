@@ -1,0 +1,229 @@
+<resources>
+    <string name="app_name">Gif Payment</string>
+    <string name="dummy_history" translatable="false">Money sent to <b>Tony Stark</b></string>
+    <string name="txt_welcome">Welcome,</string>
+    <string name="txt_available_amount">Available Amount</string>
+    <string name="txt_spent">Income</string>
+    <string name="txt_income">Expense</string>
+    <string name="menu_card">My Cards</string>
+    <string name="menu_profile">My Profile</string>
+    <string name="menu_receive">Received</string>
+    <string name="lbl_receiver_account">Receiver Account</string>
+    <string name="lbl_description">Description</string>
+    <string name="bankacc">Bank Account Number</string>
+    <string name="menu_payment">Payment</string>
+    <string name="lbl_business_type">Business Type</string>
+    <string name="lbl_name">Name</string>
+    <string name="lbl_username">Username</string>
+    <string name="lbl_state">State</string>
+    <string name="lbl_pay">Pay</string>
+    <string name="lbl_cancel">Cancel</string>
+    <string name="txt_singin">SignIn</string>
+    <string name="lbl_enter_phone_number">Enter Phone Number</string>
+    <string name="lbl_underscores" translatable="false">_ _ _ _ _</string>
+    <string name="lbl_verification_code">Phone Verification</string>
+    <string name="lbl_account_number">Account Number</string>
+    <string name="lbl_nrc">NRC</string>
+    <string name="lbl_phone_number">Phone Number</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_address">Address</string>
+    <string name="lbl_township">Township</string>
+    <string name="lbl_city">City</string>
+    <string name="lbl_nrc_back_image">NRC Back Image</string>
+    <string name="lbl_register">Register</string>
+    <string name="lbl_nrc_front_image">NRC front Image</string>
+    <string name="lbl_credit_adjustment" translatable="false">CreditAdj</string>
+    <string name="lbl_external_key">External Key</string>
+    <string name="lbl_account_name">Account Name :</string>
+    <string name="city">Yangon</string>
+    <string name="township">Tamwe</string>
+    <string name="shop_name">My Bill</string>
+    <string name="shop">Shops</string>
+    <string name="shop_name_shoplist">Shop name :</string>
+    <string name="lbl_city_shoplist">City :</string>
+    <string name="lbl_township_shoplist">Township :</string>
+    <string name="lbl_myanmar">Myanmar</string>
+    <string name="lbl_english">English</string>
+    <string name="lbl_communicate">Communicate</string>
+    <string name="cash_in_agent">Cash In(for agent)</string>
+    <string name="lbl_password">Password</string>
+    <string name="cash_in_bank">Cash In(Bank)</string>
+    <string name="lbl_change_language">Change Language</string>
+    <string name="lbl_go_back" translatable="false">Go Back</string>
+    <string name="term" translatable="false">
+        ၁။ လူကြီးမင်းလိုအပ်သော Mobile ဖုန်းငွေပမာဏအား ရွေးချယ်ပါ။
+
+၂။ ထိုနောက် လူကြီးမင်း၏ Mobile ဖုန်းနံပါတ်အား အောက်ပါအတိုင်း ထည့်သွင်းပေးပါ။
+
+   သတိပြုရန်....
+   - Country Code "+95" ထည့်သွင်းရန် မလိုပါ။
+   - ဖုန်းနံပါတ်များကြားတွင် Space ထည့်ရေးရန် မလိုပါ။
+   - "09" အပါအဝင် ဖုန်းနံပါတ်အား အပြည့်အစုံထည့်သွင်းပေးရန်... (eg.. 095161719)
+
+
+၄။ ငွေပေးချေမှု ပြုလုပ်ရမည် အဆင့်သို့ ရောက်ရှိသွားပါလိမ့်မည်။ လူကြီးမင်း ရွေးချယ်သော ငွေပမာဏ နှင့် Mobile ဖုန်းနံပါတ်အား သေချာစွာ ထပ်မံစစ်ဆေးပါ။
+
+၅။ ထို့နောက် လူကြီးမင်း၏ Online Payment စနစ်အတွင်းသို့ ဝင်ရောက်၍ ငွေပေးချေမှု ပြုလုပ်နိုင်ရန် အဆင့်ဆင့်ဆောင်ရွက်ပေးပါ။
+
+၆။ အထက်ပါအတိုင်း ငွေပေးချေမှုလုပ်ငန်းစဉ်များ ပြုလုပ်ပြီးစီးပါက ခေတ္တစောင့်ဆိုင်းပေးပါ။
+
+၇။ လူကြီးမင်း၏ Mobile ဖုန်းသို့ ဖြည့်သွင်းလိုက်သော ငွေပမာဏ ဝင်ရောက်လာပါလိမ့်မည်။
+    </string>
+    <string name="about" translatable="false">
+        ကျွန်တော်များ၏  Application  မှ လူကြီးမင်းတို့၏ Mobile ဖုန်းများသို့ တိုက်ရိုက် ငွေဖြည့်သွင်းပေးသော Software ဖြစ်ပါသည်။ လူကြီးမင်းတို့၏ MPT GSM/WCDMA, MECTel, CDMA 800 Mhz, CDMA 450 Mhz, Ooredoo, Telenor ဖုန်းများသို့ Online မှတဆင့် လွယ်ကူ လျင်မြန်စွာ တိုက်ရိုက် ငွေဖြည့်သွင်းနိုင်ပါသည်။
+
+
+Service
+App မှ တဆင့် အောက်ဖော်ပြပါ Mobile Network များသို့ ငွေဖြည့်သွင်းပေးနိုင်ပါသည်။
+- GSM Mobile Network
+- WCDMA Mobile Network
+- MEC Tel - CDMA 800 Mhz
+- CDMA 800 Mhz Mobile Network
+- CDMA 450 Mhz Mobile Network
+- Ooredoo Mobile Network
+- Telenor Mobile Network
+- MyTel Mobile Network
+
+Features
+- Online မှ တဆင့် တိုက်ရိုက် ငွေဖြည့်သွင်းပေးခြင်း။
+- Top up Card များအား ခဲခြစ်စရာ မလိုအပ်ခြင်း။
+- ငွေပေးချေပြီး ဖြည့်သွင်းလိုက်သော ငွေပမာဏ ချက်ချင်း ရောက်ရှိလာခြင်း။
+- Online Service ဖြစ်သောကြောင့် (၂၄) နာရီပတ်လုံး ဝန်ဆောင်မှု ရရှိနိုင်ခြင်း။
+
+
+Top-up Time
+- Direct top-up
+- Instant Delivery
+    </string>
+    <string name="myabout">About</string>
+    <string name="access_token" translatable="false">YOUR_MAPBOX_ACCESS_TOKEN</string>
+    <string name="user_location_permission_explanation">This app needs location permissions to show its functionality.</string>
+    <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
+
+    <string-array name="type">
+    <item>MPT</item>
+    <item>Ooredoo</item>
+    <item>Telenor</item>
+    <item>MyTel</item>
+    </string-array>
+
+    <string-array name="types">
+        <item>Ticket</item>
+        <item>Oil</item>
+        <item>Hotel</item>
+        <item>Taxi</item>
+    </string-array>
+
+    <string-array name="names">
+        <item>Number 1</item>
+        <item>Number 2</item>
+        <item>Number 3</item>
+        <item>Number 4</item>
+    </string-array>
+
+    <string-array name="unit">
+        <item>Dollar ($)</item>
+        <item>Kyat (ks)</item>
+        <item>Yuan (¥)</item>
+    </string-array>
+
+    <string-array name="township">
+        <item>Botataung</item>
+        <item>Dagon Seikkan</item>
+        <item>East Dagon</item>
+        <item>North Dagon</item>
+        <item>North Okkalapa</item>
+        <item>Pazundaung</item>
+        <item>South Dagon</item>
+        <item>South Okkalapa</item>
+        <item>Thingangyun</item>
+        <item>Dawbon</item>
+        <item>Mingala Taungnyunt</item>
+        <item>Tamwe</item>
+        <item>Thaketa</item>
+        <item>Yankin</item>
+    </string-array>
+
+    <string-array name="city">
+        <item>Yangon</item>
+        <item>Mandalay</item>
+        <item>Naypyidaw</item>
+        <item>Taunggyi</item>
+        <item>Mawlamyine</item>
+        <item>Bago</item>
+        <item>Myitkyina</item>
+        <item>Monywa</item>
+        <item>Pathein</item>
+        <item>Pyay</item>
+        <item>Myeik</item>
+        <item>Meiktila</item>
+    </string-array>
+    <string name="title_activity_wallet">Wallet</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">GIFT Wallet</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Services</string>
+    <string name="log_out">Log Out</string>
+    <string name="lbl_amount">Amount</string>
+    <string name="lbl_send">Send</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="invoice_detail">Detail</string>
+    <string name="my_account">My Account ID : </string>
+    <string name="date">Date</string>
+    <string name="kyat">MMK</string>
+
+    <string-array name="number">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+
+    </string-array>
+    <string-array name="city_type">
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+        <item>PBN</item>
+    </string-array>
+    <string name="bill">Billing</string>
+    <string name="mtopup">TopUp</string>
+    <string name="setting">Setting</string>
+    <string name="terms">Terms And Conditions</string>
+</resources>
