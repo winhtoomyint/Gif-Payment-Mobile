@@ -43,11 +43,11 @@ public class WalletActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public static final String IS_MEMBER = "IS_MEMBER";
-    private int isMember;
+    private Integer isMember;
     //0 = member
     //1 = agent
 
-    public static Intent newIntent(Context context, int isMember){
+    public static Intent newIntent(Context context, Integer isMember){
         Intent intent = new Intent(context, WalletActivity.class);
         intent.putExtra(IS_MEMBER, isMember);
         return intent;

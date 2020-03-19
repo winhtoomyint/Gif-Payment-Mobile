@@ -170,7 +170,15 @@ public class LoginActivity extends AppCompatActivity {
                             ProfileData profileData = response.body();
                             etUsername.setText("");
                             etPassword.setText("");
-                            startActivity(WalletActivity.newIntent(LoginActivity.this, profileData.nrcPhotos.get(0).getMemberRole()));
+                            if (profileData != null) {
+                                if(profileData.nrcPhotos.size() != 0) {
+                                    startActivity(WalletActivity.newIntent(LoginActivity.this, profileData.nrcPhotos.get(0).getMemberRole()));
+                                }else{
+                                    startActivity(WalletActivity.newIntent(LoginActivity.this, 0));
+                                }
+                            }else{
+                                Toast.makeText(LoginActivity.this, "Your account is deleted. Please contact to the administrator", Toast.LENGTH_SHORT).show();
+                            }
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                             pd.dismiss();
                             finish();

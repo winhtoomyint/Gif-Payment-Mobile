@@ -12,7 +12,7 @@ public class NrcPhoto{
     @SerializedName("star")
     public Integer star;
     @SerializedName("member_role")
-    public int memberRole;
+    public Integer memberRole;
 
     public String getProfileName() {
         return profileName;
@@ -22,11 +22,11 @@ public class NrcPhoto{
         this.profileName = profileName;
     }
 
-    public int getMemberRole() {
+    public Integer getMemberRole() {
         return memberRole;
     }
 
-    public void setMemberRole(int memberRole) {
+    public void setMemberRole(Integer memberRole) {
         this.memberRole = memberRole;
     }
 

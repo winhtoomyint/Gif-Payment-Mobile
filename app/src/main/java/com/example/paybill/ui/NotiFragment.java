@@ -60,6 +60,7 @@ public class NotiFragment extends AppCompatActivity {
         setContentView(R.layout.noti_frag);
         mydata=new ArrayList<>();
         recyclerView= (RecyclerView)findViewById(R.id.mynotilist);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         setupData();
@@ -69,7 +70,7 @@ public class NotiFragment extends AppCompatActivity {
 
 
     }
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.noti_menu, menu);
@@ -92,7 +93,7 @@ public class NotiFragment extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
 
     private void setupRecyclerView() {
