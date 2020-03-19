@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/nav_cash_in"
-        android:name="com.example.paybill.ui.cashin.CashInFragment"
+        android:name="com.example.paybill.ui.send.SendFragment"
         android:label="@string/cash_in_agent"
-        tools:layout="@layout/fragment_cash_in"/>
+        tools:layout="@layout/fragment_sendbill"/>
     <fragment
         android:id="@+id/nav_bank_cashin"
         android:name="com.example.paybill.ui.BankCashFragment"

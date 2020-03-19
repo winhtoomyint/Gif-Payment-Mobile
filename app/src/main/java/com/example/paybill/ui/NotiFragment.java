@@ -13,16 +13,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.paybill.Credit.Credit;
 import com.example.paybill.Credit.CreditInterface;
 import com.example.paybill.Credit.CreditRetrofit;
 import com.example.paybill.R;
+import com.example.paybill.Retrofit.UserClient;
 import com.example.paybill.Utils.Mail;
 import com.example.paybill.adapters.NotiAdapter;
-import com.example.paybill.commitsavoids.CommitAvoidInterface;
-import com.example.paybill.commitsavoids.CommitRetrofit;
+import com.example.paybill.commits.CommitAvoidInterface;
+import com.example.paybill.commits.CommitRetrofit;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -40,13 +40,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.example.paybill.Utils.UserDetailData.userAccountID;
+import static com.example.paybill.Utils.UserDetailData.username;
 
 public class NotiFragment extends AppCompatActivity {
     NotiAdapter notiAdapter;
     SwipeController swipeController = null;
-    SwipeRefreshLayout swipeRefreshLayout;
-    public List<Mail> mydata;
-    RecyclerView recyclerView;
+    public List<Mail> mydata;RecyclerView recyclerView;
 
     FirebaseFirestore db;
 
@@ -61,16 +60,11 @@ public class NotiFragment extends AppCompatActivity {
         setContentView(R.layout.noti_frag);
         mydata=new ArrayList<>();
         recyclerView= (RecyclerView)findViewById(R.id.mynotilist);
-        swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                setupData();
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         setupData();
+
+
         setupRecyclerView();
 
 
@@ -100,7 +94,11 @@ public class NotiFragment extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     private void setupRecyclerView() {
+
+
+
         swipeController = new SwipeController(new SwipeControllerActions() {
             @Override
             public void onRightClicked(int position) {
@@ -128,21 +126,20 @@ public class NotiFragment extends AppCompatActivity {
         });
     }
     private void setupData(){
+        //removeFirebaseData("271bc039-c904-4b93-ad1d-7c7144e2262a");
         db.collection(userAccountID.trim())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        List<Mail> data1 = new ArrayList<>();
                         if (task.isSuccessful()) {
                             int i = 0;
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                data1.add(new Mail(document.getId(),document.get("senderId").toString(),document.get("amount").toString(),document.get("description").toString()));
-                                //Log.d("ListData", "onComplete: "+mydata.get(i).getInvoiceId());
+                                mydata.add(new Mail(document.getId(),document.get("amount").toString(),document.get("description").toString()));
+                                Log.d("ListData", "onComplete: "+mydata.get(i).getInvoiceId());
                                 i++;
                             }
                             Log.d("size", "onComplete: "+mydata.size());
-                            mydata = data1;
                             notiAdapter=new NotiAdapter(getApplicationContext(),mydata);
                             recyclerView.setAdapter(notiAdapter);
 
@@ -153,19 +150,26 @@ public class NotiFragment extends AppCompatActivity {
                     }
                 });
     }
+    /*private void accept(String invoiceId){
+        commitInvoice(invoiceId);
+    }*/
+
+    /*private void decline(String invoiceId){
+        avoidInvoice(invoiceId);
+    }*/
 
     private void removeFirebaseData(String invoiceId, int position){
         db.collection(userAccountID.trim()).document(invoiceId.trim()).delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(NotiFragment.this, "Delete Success", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NotiFragment.this, "Success", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(NotiFragment.this, "Delet Fail", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NotiFragment.this, "Fail", Toast.LENGTH_SHORT).show();
                     }
                 });
         notiAdapter.data.remove(position);

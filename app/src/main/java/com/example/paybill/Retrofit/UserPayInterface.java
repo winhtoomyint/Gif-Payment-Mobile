@@ -11,9 +11,9 @@ import retrofit2.http.Query;
 
 public interface UserPayInterface {
     @Headers({
-            "X-KillBill-ApiKey:ApexPayMentHinThar",
-            "X-KillBill-ApiSecret:app10000",
-            "Authorization:Basic dXNlcjE6dXNlcjE=",
+            "X-KillBill-ApiKey:hELL-0xxxx-12345",
+            "X-KillBill-ApiSecret:100-200-300-400-500",
+            "Authorization:Basic YWRtaW46cGFzc3dvcmQ=",
     })
 
     @GET("1.0/kb/accounts/{id}/invoices")

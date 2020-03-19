@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,7 +34,7 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull  ViewHolder holder, int i) {
             Mail mail=data.get(i);
-            holder.invoid.setText(mail.getSenderId() + " " +mail.getAmount() + " " + mail.getDescription());
+            holder.invoid.setText(mail.getAmount()+"");
     }
 
     @Override
@@ -47,31 +46,9 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView invoid;
-        ImageButton arrowDown;
-        ImageButton arrowUp;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             invoid=(TextView)itemView.findViewById(R.id.inv_id);
-            arrowDown = itemView.findViewById(R.id.ib_arrow_down);
-            arrowUp = itemView.findViewById(R.id.ib_arrow_up);
-
-            arrowDown.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    arrowDown.setVisibility(View.INVISIBLE);
-                    arrowUp.setVisibility(View.VISIBLE);
-                    invoid.setMaxLines(Integer.MAX_VALUE);
-                }
-            });
-
-            arrowUp.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    arrowUp.setVisibility(View.INVISIBLE);
-                    arrowDown.setVisibility(View.VISIBLE);
-                    invoid.setMaxLines(1);
-                }
-            });
         }
     }
 }

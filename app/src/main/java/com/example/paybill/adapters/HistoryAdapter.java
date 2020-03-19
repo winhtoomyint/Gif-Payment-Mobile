@@ -50,7 +50,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         adjest+=invoice.getCreditAdj();
         amu+=invoice.getAmount();
 
-        Log.d("Total Adj",adjest+"*"+amu);
+        Log.d("Total Adj",adjest+"*"+amu+" "+invoice.getStatus());
         holder.hist_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

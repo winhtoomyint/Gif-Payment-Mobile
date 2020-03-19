@@ -11,8 +11,8 @@ import retrofit2.http.Url;
 
 public interface UserGet {
         @Headers({
-                "X-KillBill-ApiKey:ApexPayMentHinThar",
-                "X-KillBill-ApiSecret:app10000",
+                "X-KillBill-ApiKey:hELL-0xxxx-12345",
+                "X-KillBill-ApiSecret:100-200-300-400-500",
                 "Authorization:Basic YWRtaW46cGFzc3dvcmQ=",
         })
 

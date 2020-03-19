@@ -65,8 +65,7 @@
         android:background="@drawable/yello_color"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:onClick="tvOnOk"
-        android:textColor="#ffffff"
+        android:textColor="#338373"
         android:textAlignment="center"
         android:text="OK"/>
 

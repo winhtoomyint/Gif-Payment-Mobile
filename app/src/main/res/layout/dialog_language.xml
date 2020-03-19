@@ -46,4 +46,19 @@
         android:textSize="@dimen/text_regular"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/btn_chinese"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_english"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_china_flag"
+        android:drawablePadding="16dp"
+        android:fontFamily="serif"
+        android:padding="16dp"
+        android:text="@string/lbl_chinese"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_regular"
+        android:textStyle="bold" />
+
 </RelativeLayout>

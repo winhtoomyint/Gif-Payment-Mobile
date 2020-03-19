@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Gif Payment</string>
     <string name="txt_welcome">ကြိုဆိုပါတယ်,</string>
+    <string name="btnpasschange">စကားဝှက် ပြောင်းလဲပါ</string>
     <string name="txt_available_amount">ငွေပမာဏ</string>
     <string name="txt_spent">ဝင်ငွေ</string>
     <string name="txt_income">အသုံးစရိတ်</string>
@@ -77,6 +78,8 @@
     <string name="setting">ချိန်ညှိခြင်း</string>
     <string name="kyat">ကျပ်</string>
     <string name="terms">စည်းကမ်းနှင့်သတ်မှတ်ချက်များ</string>
+    <string name="enter_new_password">စကားဝှက်အသစ်ထည့်ပါ</string>
+    <string name="lbl_chinese">Chinese</string>
 
     <string-array name="types">
         <item>ခရီးသွားလက်မှတ်များ</item>
@@ -90,4 +93,6 @@
         <item>ကျပ် (ks)</item>
         <item>ယွမ် (¥)</item>
     </string-array>
+    <string name="enter_old_password">လက်ရှိစကားဝှက်ကိုရိုက်ထည့်ပါ</string>
+    <string name="btnchange">ပြောင်းလဲပါ</string>
 </resources>

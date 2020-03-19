@@ -76,7 +76,9 @@
     <string name="date">ရက်စွဲ</string>
     <string name="setting">ချိန်ညှိခြင်း</string>
     <string name="kyat">ကျပ်</string>
+    <string name="enter_new_password">စကားဝှက်အသစ်ထည့်ပါ</string>
     <string name="terms">စည်းကမ်းနှင့်သတ်မှတ်ချက်များ</string>
+    <string name="lbl_chinese">Chinese</string>
 
     <string-array name="types">
         <item>ခရီးသွားလက်မှတ်များ</item>
@@ -90,4 +92,6 @@
         <item>ကျပ် (ks)</item>
         <item>ယွမ် (¥)</item>
     </string-array>
+    <string name="enter_old_password">လက်ရှိစကားဝှက်ကိုရိုက်ထည့်ပါ</string>
+    <string name="btnchange">ပြောင်းလဲပါ</string>
 </resources>

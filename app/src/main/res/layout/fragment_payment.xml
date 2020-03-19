@@ -153,7 +153,7 @@
         android:paddingBottom="@dimen/margin_medium_2"
         android:text="@string/lbl_cancel"
         android:textAllCaps="true"
-        android:textColor="#ffffff"
+        android:textColor="#338373"
         style="@style/TextAppearance.AppCompat.Medium"
         android:textSize="@dimen/text_regular"
         android:textStyle="bold"
@@ -179,7 +179,7 @@
         android:paddingBottom="@dimen/margin_medium_2"
         android:text="@string/lbl_send"
         android:textAllCaps="true"
-        android:textColor="#ffffff"
+        android:textColor="#338373"
 
         android:textSize="@dimen/text_regular"
         android:textStyle="bold"

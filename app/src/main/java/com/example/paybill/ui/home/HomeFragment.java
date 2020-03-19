@@ -50,9 +50,12 @@ public class HomeFragment extends Fragment {
     RecyclerView rvHistory;
     HistoryAdapter adapter;
     UserPayInterface userPayInterface;
+    UserGet userGet;
     List<Invoice> invoices;
     TextView textView;
-    TextView amount, spent, adj_pay, date_txt;
+    TextView amount,spent,adj_pay,date_txt;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
     SwipeRefreshLayout swipeRefreshLayout;
     private static final String TAG = "HomeFragment";
     private HomeViewModel homeViewModel;
@@ -70,15 +73,15 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        spent = (TextView) view.findViewById(R.id.tv_spent);
-        adj_pay = (TextView) view.findViewById(R.id.tv_income);
-        amount = (TextView) view.findViewById(R.id.tv_amount);
-        date_txt = (TextView) view.findViewById(R.id.tv_date);
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM,YYYY");
+        spent=(TextView)view.findViewById(R.id.tv_spent);
+        adj_pay=(TextView)view.findViewById(R.id.tv_income);
+        amount=(TextView)view.findViewById(R.id.tv_amount);
+        date_txt =(TextView)view.findViewById(R.id.tv_date);
+        SimpleDateFormat formatter= new SimpleDateFormat("dd-MM,YYYY");
         Date date = new Date(System.currentTimeMillis());
         date_txt.setText(formatter.format(date));
-        textView = (TextView) view.findViewById(R.id.tv_name);
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.my_swip_lyt);
+        textView=(TextView)view.findViewById(R.id.tv_name);
+        swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.my_swip_lyt);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -87,125 +90,106 @@ public class HomeFragment extends Fragment {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
-        textView.append(" " + UserDetailData.username);
+        textView.append(" "+UserDetailData.username);
         Firebase.setAndroidContext(getContext());
-        rvHistory = (RecyclerView) view.findViewById(R.id.rv_history);
+        rvHistory=(RecyclerView)view.findViewById(R.id.rv_history);
         rvHistory.setLayoutManager(new LinearLayoutManager(getContext()));
-        Log.d(TAG, "Call HomeFragment");
-        if (userAccountID != null) {
-            userPayInterface = UserClient.getClient().create(UserPayInterface.class);
-            Call<List<Invoice>> call = userPayInterface.getPayList(userAccountID, true);
-            call.enqueue(new Callback<List<Invoice>>() {
-                @Override
-                public void onResponse(Call<List<Invoice>> call, Response<List<Invoice>> response) {
-                    int ad = 0, am = 0;
-                    invoices = response.body();
-
-                    for (Invoice a : invoices) {
-                        ad += a.getCreditAdj();
-
-                    }
-                    for (Invoice b : invoices) {
-                        am += b.getAmount();
-                        adj_pay.setText("" + am);
-                    }
-                    int add_amu = am + ad;
-                    spent.setText("" + add_amu);
-                    amount.setText("" + ad);
-                    List<Invoice> data = new ArrayList<>();
-                    for (int i = invoices.size() - 1; i >= 0; i--) {
-                        data.add(invoices.get(i));
-                    }
-                    adapter = new HistoryAdapter(getContext(), data);
-
-                    rvHistory.setAdapter(adapter);
-                    //List<Invoice.invoice_desc> invoice_descs= data.get(0).invoice_detail;
-                    // Log.d("OkData",invoices.get(0).getAmount()+""+invoice_descs.get(0).getDescription() );
-                }
-
-                @Override
-                public void onFailure(Call<List<Invoice>> call, Throwable t) {
-
-                }
-            });
+        Log.d(TAG,"Call HomeFragment");
+        if(userAccountID!=null) {
+            dataFetching();
         }
     }
 
     private void dataFetching() {
-        if(userAccountID!=null) {
-            userPayInterface = UserClient.getClient().create(UserPayInterface.class);
-            Call<List<Invoice>> call = userPayInterface.getPayList(userAccountID, true);
-            call.enqueue(new Callback<List<Invoice>>() {
-                @Override
-                public void onResponse(Call<List<Invoice>> call, Response<List<Invoice>> response) {
-                    int ad = 0, am = 0;
-                    invoices = response.body();
+//       // Collections.shuffle(invoices, new Random(System.currentTimeMillis()));
+//        List<Invoice> data = new ArrayList<>();
+//        for (int i = invoices.size() - 1; i >= 0; i--) {
+//            data.add(invoices.get(i));
+//        }
+//        adapter = new HistoryAdapter(getContext(), data);
+//        rvHistory.setAdapter(adapter);
+        userPayInterface = UserClient.getClient().create(UserPayInterface.class);
+        Call<List<Invoice>> call = userPayInterface.getPayList(userAccountID, true);
+        call.enqueue(new Callback<List<Invoice>>() {
+            @Override
+            public void onResponse(Call<List<Invoice>> call, Response<List<Invoice>> response) {
+                int ad = 0, am = 0;
+                invoices = response.body();
 
-                    for (Invoice a : invoices) {
-                        ad += a.getCreditAdj();
-
-                    }
-                    for (Invoice b : invoices) {
-                        am += b.getAmount();
-                        adj_pay.setText("" + am);
-                    }
-                    int add_amu = am + ad;
-                    spent.setText("" + add_amu);
-                    amount.setText("" + ad);
-                    List<Invoice> data = new ArrayList<>();
-                    for (int i = invoices.size() - 1; i >= 0; i--) {
-                        data.add(invoices.get(i));
-                    }
-                    adapter = new HistoryAdapter(getContext(), data);
-                    rvHistory.setAdapter(adapter);
-                    //List<Invoice.invoice_desc> invoice_descs= data.get(0).invoice_detail;
-                    // Log.d("OkData",invoices.get(0).getAmount()+""+invoice_descs.get(0).getDescription() );
-                }
-
-                @Override
-                public void onFailure(Call<List<Invoice>> call, Throwable t) {
+                for (Invoice a : invoices) {
+                    ad += a.getCreditAdj();
 
                 }
-            });
-        }
+                for (Invoice b : invoices) {
+//                        am += b.getAmount();
+//                        adj_pay.setText("a" + am);
+                }
+                for(int i=0;i<invoices.size();i++){
+                    if (invoices.get(i).getStatus().equals("COMMITTED")){
+                        am += invoices.get(i).getAmount();
+                    }
+
+                    adj_pay.setText(""+am);
+                }
+                int add_amu = am + ad;
+                spent.setText("" + add_amu);
+                amount.setText("" + ad);
+                List<Invoice> data = new ArrayList<>();
+                for (int i = invoices.size() - 1; i >= 0; i--)
+                {
+                    data.add(invoices.get(i));
+                }
+                adapter = new HistoryAdapter(getContext(), data);
+
+                rvHistory.setAdapter(adapter);
+                //List<InvoiceForNumber.invoice_desc> invoice_descs= data.get(0).invoice_detail;
+                // Log.d("OkData",invoices.get(0).getAmount()+""+invoice_descs.get(0).getDescription() );
+            }
+
+            @Override
+            public void onFailure(Call<List<Invoice>> call, Throwable t) {
+
+            }
+        });
     }
-}
+
 //    private void getUserHistory(){
 //        if(userAccountID!=null) {
 //            userPayInterface = UserClient.getClient().create(UserPayInterface.class);
-//            Call<List<Invoice>> call = userPayInterface.getPayList(userAccountID, true);
-//            call.enqueue(new Callback<List<Invoice>>() {
+//            Call<List<InvoiceForNumber>> call = userPayInterface.getPayList(userAccountID, true);
+//            call.enqueue(new Callback<List<InvoiceForNumber>>() {
 //                @Override
-//                public void onResponse(Call<List<Invoice>> call, Response<List<Invoice>> response) {
+//                public void onResponse(Call<List<InvoiceForNumber>> call, Response<List<InvoiceForNumber>> response) {
 //                    int ad = 0, am = 0;
 //                    invoices = response.body();
 //
-//                    for (Invoice a : invoices) {
+//                    for (InvoiceForNumber a : invoices) {
 //                        ad += a.getCreditAdj();
 //
 //                    }
-//                    for (Invoice b : invoices) {
+//                    for (InvoiceForNumber b : invoices) {
 //                        am += b.getAmount();
 //                        adj_pay.setText("" + am);
 //                    }
 //                    int add_amu = am + ad;
 //                    spent.setText("" + add_amu);
 //                    amount.setText("" + ad);
-//                    List<Invoice> data = new ArrayList<>();
+//                    List<InvoiceForNumber> data = new ArrayList<>();
 //                    for (int i = invoices.size() - 1; i >= 0; i--) {
 //                        data.add(invoices.get(i));
 //                    }
 //                    adapter = new HistoryAdapter(getContext(), data);
 //
 //                    rvHistory.setAdapter(adapter);
-//                    //List<Invoice.invoice_desc> invoice_descs= data.get(0).invoice_detail;
+//                    //List<InvoiceForNumber.invoice_desc> invoice_descs= data.get(0).invoice_detail;
 //                    // Log.d("OkData",invoices.get(0).getAmount()+""+invoice_descs.get(0).getDescription() );
 //                }
 //
 //                @Override
-//                public void onFailure(Call<List<Invoice>> call, Throwable t) {
+//                public void onFailure(Call<List<InvoiceForNumber>> call, Throwable t) {
 //
 //                }
 //            });
 //        }
 //    }
+}

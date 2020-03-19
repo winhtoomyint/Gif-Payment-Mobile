@@ -13,6 +13,16 @@ public class Charge {
     public String currency;
     @SerializedName("invoiceId")
     public String invoiceId;
+    @SerializedName("startDate")
+    public String startDate;
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
 
     public Charge(String description, int amount) {
         this.description = description;

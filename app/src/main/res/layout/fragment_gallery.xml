@@ -255,70 +255,7 @@
                 app:layout_constraintStart_toEndOf="@+id/vertical_divider"
                 app:layout_constraintTop_toBottomOf="@+id/tv_city_header" />
 
-            <TextView
-                android:id="@+id/tv_register_date_header"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="Register Date"
-                android:textColor="#ffffff"
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="@+id/vertical_divider"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_state"
-                app:layout_goneMarginStart="16dp" />
 
-            <TextView
-                android:id="@+id/tv_register_date"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/shape_profile_textview"
-                android:padding="8dp"
-                android:text="01/01/19"
-                android:textColor="@android:color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/vertical_divider"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_register_date_header" />
-
-            <TextView
-                android:id="@+id/tv_expire_date_header"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="Expire Date"
-                android:textColor="#ffffff"
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/vertical_divider"
-                app:layout_constraintTop_toBottomOf="@+id/tv_city"
-                app:layout_goneMarginStart="16dp" />
-
-            <TextView
-                android:id="@+id/tv_expire_date"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/shape_profile_textview"
-                android:padding="8dp"
-                android:text="01/01/19"
-                android:textColor="@android:color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/vertical_divider"
-                app:layout_constraintTop_toBottomOf="@+id/tv_expire_date_header" />
 
             <TextView
                 android:id="@+id/tv_phone_number_header"

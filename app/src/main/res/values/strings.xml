@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Gif Payment</string>
+
     <string name="dummy_history" translatable="false">Money sent to <b>Tony Stark</b></string>
     <string name="txt_welcome">Welcome,</string>
     <string name="txt_available_amount">Available Amount</string>
@@ -50,6 +51,10 @@
     <string name="cash_in_bank">Cash In(Bank)</string>
     <string name="lbl_change_language">Change Language</string>
     <string name="lbl_go_back" translatable="false">Go Back</string>
+    <string name="btnpasschange">Change Password</string>
+    <string name="lbl_chinese">Chinese</string>
+    <string name="enter_old_password">Enter Current Password</string>
+    <string name="enter_new_password">Enter New Password</string>
     <string name="term" translatable="false">
         ၁။ လူကြီးမင်းလိုအပ်သော Mobile ဖုန်းငွေပမာဏအား ရွေးချယ်ပါ။
 
@@ -226,4 +231,5 @@ Top-up Time
     <string name="mtopup">TopUp</string>
     <string name="setting">Setting</string>
     <string name="terms">Terms And Conditions</string>
+    <string name="btnchange">Change</string>
 </resources>

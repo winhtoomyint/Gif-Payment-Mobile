@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -43,12 +44,14 @@ import static com.example.paybill.Utils.UserDetailData.password;
 import static com.example.paybill.Utils.UserDetailData.username;
 
 public class MainActivity extends AppCompatActivity {
-    EditText editTextPhone, editTextCode, name_field, pass_field;
+    EditText  editTextCode, name_field, pass_field;
+    public EditText editTextPhone;
     private String verificationId;
-    FirebaseAuth mAuth;
+    FirebaseAuth mAuth;PhoneAuthProvider mPhoneAuthProvider;
     DatabaseReference myRef;
     String user, pass,phone;
     String codeSent;
+    Button getverify_code;
     FirebaseDatabase database;
 
     @Override
@@ -60,10 +63,12 @@ public class MainActivity extends AppCompatActivity {
         myRef = database.getReference("register");
         Firebase.setAndroidContext(this);
         mAuth = FirebaseAuth.getInstance();
-
+        mPhoneAuthProvider = PhoneAuthProvider.getInstance();
         editTextCode = findViewById(R.id.editTextCode);
         editTextPhone = findViewById(R.id.editTextPhone);
         phone=editTextPhone.getText().toString();
+        getverify_code=(Button)findViewById(R.id.buttonGetVerificationCode);
+//      UserDetailData.phone+=editTextPhone.getText().toString();
         name_field = findViewById(R.id.et_name);
         pass_field =  findViewById(R.id.et_pass);
         findViewById(R.id.register_txt).setOnClickListener(new View.OnClickListener() {
@@ -72,11 +77,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
-        findViewById(R.id.buttonGetVerificationCode).setOnClickListener(new View.OnClickListener() {
+       getverify_code.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sendVerificationCode();
+                getverify_code.setClickable(false);
+                Toast.makeText(MainActivity.this, "Please Wait OTP Code ", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -91,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void verifySignInCode(String code) {
         try {
+            UserDetailData.phnodata=editTextPhone.getText().toString();
+            //Log.d("MyPhone",""+UserDetailData.phone);
             PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
             signInWithPhoneAuthCredential(credential);
         } catch (Exception e) {
@@ -152,7 +162,9 @@ public class MainActivity extends AppCompatActivity {
                         reference.child(user).child("phone_no").setValue(editTextPhone.getText().toString().trim());
                         username = user;
                         password = pass;
-                        UserDetailData.phone=phone;
+                        UserDetailData.phnodata=editTextPhone.getText().toString();
+                        UserDetailData.phone+=phone;
+                        Log.d("MyPhone",""+UserDetailData.phone);
                         startActivity(new Intent(MainActivity.this, RegisterActivity.class));
                         Toast.makeText(MainActivity.this, "SignUp successful", Toast.LENGTH_LONG).show();
                     }
@@ -164,11 +176,13 @@ public class MainActivity extends AppCompatActivity {
                                 reference.child(user).child("phone_no").setValue(editTextPhone.getText().toString().trim());
                                 username = user;
                                 password = pass;
-                                UserDetailData.phone=phone;
+                                UserDetailData.phnodata=editTextPhone.getText().toString();
+                                UserDetailData.phone+=phone;
+                                Log.d("MyPhone",""+UserDetailData.phone);
                                 startActivity(new Intent(MainActivity.this, RegisterActivity.class));
                                 Toast.makeText(MainActivity.this, "registration successful", Toast.LENGTH_LONG).show();
                             } else {
-                                Toast.makeText(MainActivity.this, "etUsername already exists", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, "Username already exists", Toast.LENGTH_LONG).show();
                             }
 
                         } catch (JSONException e) {
@@ -200,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
     private void sendVerificationCode(){
 
         String phone ="+959"+editTextPhone.getText().toString();
-        Toast.makeText(this, "Getting OTP", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Getting OTP", Toast.LENGTH_SHORT).show();
         if(phone.isEmpty()){
             editTextPhone.setError("Phone number is required");
             editTextPhone.requestFocus();
@@ -212,8 +226,8 @@ public class MainActivity extends AppCompatActivity {
             editTextPhone.requestFocus();
             return;
         }
-
-
+//        mPhoneAuthProvider.verifyPhoneNumber(phone,30,TimeUnit.SECONDS,this,mCallbacks);
+//
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 phone,        // Phone number to verify
                 60,                 // Timeout duration

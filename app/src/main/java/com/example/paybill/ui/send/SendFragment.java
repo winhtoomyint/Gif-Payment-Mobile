@@ -3,7 +3,6 @@ package com.example.paybill.ui.send;
 import android.Manifest;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -29,12 +28,14 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.paybill.Charge.Charge;
 import com.example.paybill.Charge.ChargeInterface;
 import com.example.paybill.Charge.ChargeRetrofit;
-import com.example.paybill.Credit.Credit;
-import com.example.paybill.Credit.CreditInterface;
-import com.example.paybill.Credit.CreditRetrofit;
+import com.example.paybill.ChargePhp.ChargeInvoice;
+import com.example.paybill.ChargePhp.InvoiceInterface;
+import com.example.paybill.ChargePhp.InvoiceForNumber;
+import com.example.paybill.ChargePhp.Charge_Of_Php;
+import com.example.paybill.ChargePhp.Transaction;
+import com.example.paybill.ChargePhp.TransactionInterface;
 import com.example.paybill.R;
 import com.example.paybill.SimpleScannerActivity;
-import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -46,14 +47,13 @@ import java.util.List;
 import java.util.Map;
 
 
-import me.dm7.barcodescanner.zxing.ZXingScannerView;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.example.paybill.Utils.UserDetailData.userAccountID;
-import static com.example.paybill.Utils.UserDetailData.userExternalKey;
-import static com.example.paybill.Utils.UserDetailData.username;
 
 public class SendFragment extends Fragment{
     private static final int ZXING_CAMERA_PERMISSION = 1;
@@ -176,7 +176,7 @@ public class SendFragment extends Fragment{
 
     private void createChargeOnCurrentUserAccount(){
         ChargeInterface chargeInterface = ChargeRetrofit.getUser().create(ChargeInterface.class);
-        List<Charge> chargeList = new ArrayList<>();
+        final List<Charge> chargeList = new ArrayList<>();
         Charge charge = new Charge(
                 etDescription.getText().toString().trim(),
                 Integer.valueOf(etAmount.getText().toString().trim()));
@@ -197,13 +197,14 @@ public class SendFragment extends Fragment{
                 final String mDescription = etDescription.getText().toString().trim();
                 final String mInvoiceId = chargeList1.get(0).invoiceId;
                 final int mAmount = chargeList1.get(0).amount;
+                final String date=chargeList1.get(0).startDate;
                 /*Firebase reference = new Firebase("https://paybill-58d29.firebaseio.com/mails");
                 reference.child(mRecieverId).child(mInvoiceId).child("description").setValue(mDescription);
                 reference.child(mRecieverId).child(mInvoiceId).child("amount").setValue(mAmount+"");*/
                 Map<String, Object> mailData = new HashMap<>();
-                mailData.put("senderId", userAccountID);
                 mailData.put("description",mDescription);
                 mailData.put("amount",mAmount);
+                mailData.put("senderId", userAccountID);
                 db.collection(mRecieverId).document(mInvoiceId).set(mailData)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -218,6 +219,8 @@ public class SendFragment extends Fragment{
                                 Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
                             }
                         });
+                getInvoiceNum(mInvoiceId,mAmount,date,mDescription);
+                //Log.d("ChargePhp",""+ userAccountID+"*"+mInvoiceId+"*"+mAmount+"*"+date);
                 Toast.makeText(getContext(), "Successfully Sent", Toast.LENGTH_SHORT).show();
                 //Log.d(TAG, "onResponse: ");
             }
@@ -230,6 +233,53 @@ public class SendFragment extends Fragment{
             }
         });
     }
+
+    private void getInvoiceNum(final String invoiceId, final int amt, final String date, final String desc){
+        InvoiceInterface invoiceNumber= ChargeInvoice.getInvoice().create(InvoiceInterface.class);
+        Call<InvoiceForNumber> callNumber=invoiceNumber.createCharge(invoiceId,true);
+        callNumber.enqueue(new Callback<InvoiceForNumber>() {
+            @Override
+            public void onResponse(Call<InvoiceForNumber> call, Response<InvoiceForNumber> response) {
+                InvoiceForNumber invoiceForNumber=response.body();
+                setUpChargePhp(invoiceId,invoiceForNumber.getInvoiceNumber(),amt+"",date,desc);
+                Log.d("Invoice Number",""+invoiceForNumber.getInvoiceNumber());
+            }
+
+            @Override
+            public void onFailure(Call<InvoiceForNumber> call, Throwable t) {
+                Log.d("Invoice Number",""+t.getMessage());
+            }
+        });
+    }
+
+    private void setUpChargePhp(String invoice_id,String invoicenum,String amt,String date,String desc){
+        TransactionInterface mytransinter = Charge_Of_Php.createCharge().create(TransactionInterface.class);
+        RequestBody option= RequestBody.create(MediaType.parse("multipart/form-data"), "D");
+        RequestBody status= RequestBody.create(MediaType.parse("multipart/form-data"), "COMPLETE");
+        RequestBody accid= RequestBody.create(MediaType.parse("multipart/form-data"), userAccountID);
+        RequestBody invoiceid= RequestBody.create(MediaType.parse("multipart/form-data"), invoice_id);
+        RequestBody invoiceno= RequestBody.create(MediaType.parse("multipart/form-data"), invoicenum);
+        RequestBody amnt= RequestBody.create(MediaType.parse("multipart/form-data"), amt);
+        RequestBody date_data= RequestBody.create(MediaType.parse("multipart/form-data"), date);
+        RequestBody description= RequestBody.create(MediaType.parse("multipart/form-data"), desc);
+        Call<Transaction> callTrans=mytransinter.createChargePhp(option, accid,invoiceid,
+        invoiceno,amnt,status,date_data,date_data,description
+        );
+        Log.d("PhpChargeData",""+ userAccountID+"*"+invoice_id+"*"+invoicenum+"*"+amt+"*"+date+"*"+desc);
+        callTrans.enqueue(new Callback<Transaction>() {
+            @Override
+            public void onResponse(Call<Transaction> call, Response<Transaction> response) {
+                Transaction transaction=response.body();
+                Log.d("ChargePhp",""+transaction.getStatus());
+            }
+
+            @Override
+            public void onFailure(Call<Transaction> call, Throwable t) {
+                Log.d("ChargePhp ",""+t.getMessage());
+            }
+        });
+    }
+
     private void successFun(){
         etReceiverAccount.setText("");
         etDescription.setText("");

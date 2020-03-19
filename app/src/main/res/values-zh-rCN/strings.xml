@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gif Payment</string>
+    <string name="txt_welcome">欢迎光临,</string>
+    <string name="btnpasschange">修改密码</string>
+    <string name="txt_available_amount">金额</string>
+    <string name="txt_spent">入息</string>
+    <string name="txt_income">费用</string>
+    <string name="menu_card">我的卡</string>
+    <string name="menu_profile">个人资料</string>
+    <string name="menu_receive">接受</string>
+    <string name="lbl_receiver_account">收款人帐号</string>
+    <string name="lbl_description">主题</string>
+    <string name="bankacc">银行帐号</string>
+    <string name="menu_payment">付款方式</string>
+    <string name="lbl_business_type">业务类型：</string>
+    <string name="lbl_name">名称：</string>
+    <string name="lbl_username">名称：</string>
+    <string name="lbl_state">州</string>
+    <string name="lbl_pay">付款方式</string>
+    <string name="lbl_cancel">取消</string>
+    <string name="txt_singin">登入</string>
+    <string name="lbl_enter_phone_number">输入电话号码</string>
+    <string name="lbl_verification_code">筛选</string>
+    <string name="lbl_account_number">帐号 :</string>
+    <string name="lbl_nrc">公民卡</string>
+    <string name="lbl_phone_number">电话号码</string>
+    <string name="lbl_email">电邮</string>
+    <string name="lbl_address">地址：</string>
+    <string name="lbl_township">乡镇</string>
+    <string name="lbl_city">首都</string>
+    <string name="lbl_nrc_back_image">公民卡（下图）</string>
+    <string name="lbl_register">填写注册表</string>
+    <string name="lbl_nrc_front_image">公民卡（正面图）</string>
+    <string name="lbl_external_key">外键</string>
+    <string name="city">仰光</string>
+    <string name="township">塔姆威</string>
+    <string name="shop_name">My Bill</string>
+    <string name="lbl_myanmar">缅甸</string>
+    <string name="lbl_english">英文</string>
+    <string name="lbl_communicate">联络我们</string>
+    <string name="cash_in_agent">င导入（代表）</string>
+    <string name="cash_in_bank">存款（银行）</string>
+    <string name="lbl_change_language">ဘာသာစကားပြောင်းပါ</string>
+    <string name="lbl_account_name">帐号名称 :</string>
+    <string name="lbl_password">密码：</string>
+
+
+    <string name="shop">专卖店</string>
+    <string name="myabout">主题</string>
+    <string name="user_location_permission_explanation">此应用需要位置权限才能显示其功能</string>
+    <string name="user_location_permission_not_granted">您没有授予位置权限</string>
+
+    <string name="title_activity_wallet">皮夹</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">GIFT Wallet</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">服务项目</string>
+    <string name="log_out">登出</string>
+    <string name="lbl_amount">金额</string>
+    <string name="lbl_send">发送</string>
+    <string name="menu_home">首页</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">发送</string>
+    <string name="lbl_city_shoplist">首都 :</string>
+    <string name="lbl_township_shoplist">乡镇</string>
+    <string name="shop_name_shoplist">店铺名称： :</string>
+    <string name="invoice_detail">详细资料</string>
+    <string name="my_account">我的帐号 id : </string>
+    <string name="bill">费用单</string>
+    <string name="mtopup">充值</string>
+    <string name="date">日期</string>
+    <string name="setting">调整量</string>
+    <string name="kyat">ကျပ်</string>
+    <string name="terms">条款及细则</string>
+    <string name="enter_new_password">输入新密码</string>
+    <string name="lbl_chinese">Chinese</string>
+
+    <string-array name="types">
+        <item>旅行证</item>
+        <item>购买燃料</item>
+        <item>酒店/住宿</item>
+        <item>租出租车</item>
+    </string-array>
+
+    <string-array name="unit">
+        <item>ဒေါ်လာ ($)</item>
+        <item>ကျပ် (ks)</item>
+        <item>ယွမ် (¥)</item>
+    </string-array>
+    <string name="enter_old_password">输入当前密码</string>
+    <string name="btnchange">改变</string>
+</resources>

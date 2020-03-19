@@ -1,5 +1,6 @@
 package com.example.paybill;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 
+import com.example.paybill.Utils.UserDetailData;
 import com.example.paybill.ui.NotiFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,11 +42,24 @@ import static com.example.paybill.Utils.UserDetailData.username;
 public class WalletActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    public static final String IS_MEMBER = "IS_MEMBER";
+    private int isMember;
+    //0 = member
+    //1 = agent
+
+    public static Intent newIntent(Context context, int isMember){
+        Intent intent = new Intent(context, WalletActivity.class);
+        intent.putExtra(IS_MEMBER, isMember);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wallet);
+        if(getIntent().hasExtra(IS_MEMBER)){
+            isMember = getIntent().getIntExtra(IS_MEMBER, 0);
+        }
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -56,6 +71,9 @@ public class WalletActivity extends AppCompatActivity {
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send,R.id.nav_bill,R.id.nav_mbtopup,R.id.nav_setting,R.id.nav_termcondit)
                 .setDrawerLayout(drawer)
                 .build();
+        if(isMember == 0){
+            navigationView.getMenu().removeItem(R.id.nav_cash_in);
+        }
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -108,10 +126,11 @@ public class WalletActivity extends AppCompatActivity {
         userExternalKey = null;
         location = null;
         phone = null;
-        email_address="";
+        email_address=null;
         address="";
         city="";
         state="";
+        UserDetailData.phnodata="";
         finish();
     }
 
